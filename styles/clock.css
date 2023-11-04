@@ -1,0 +1,21 @@
+.widget__clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    #widget-clock__time {
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    #widget-clock__date {
+        font-size: 0.8em;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+}

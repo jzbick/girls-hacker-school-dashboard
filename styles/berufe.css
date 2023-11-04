@@ -1,0 +1,53 @@
+#widget-berufe {
+    overflow: hidden;
+}
+
+#widget-berufe__dialog {
+    width: 50%;
+    margin-top: 10%;
+    border-radius: 3rem;
+    border: 1px solid var(--dark-color);
+    outline: none;
+    padding: 2rem;
+
+    .widget-berufe__dialog__buttons {
+        display: flex;
+        justify-content: end;
+
+        & i {
+            cursor: pointer;
+        }
+    }
+}
+
+.widget-berufe__berufliste__list {
+    list-style: none;
+    padding: 0;
+    & li {
+        margin-bottom: 0.2rem;
+        &:hover {
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+    }
+}
+
+.widget-berufe__suche {
+    border: 1px solid #ccc;
+    padding: 5px;
+    outline: none;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--light-color);
+
+    &::placeholder {
+        color: var(--light-color);
+    }
+}
+
+.widget-berufe__details {
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

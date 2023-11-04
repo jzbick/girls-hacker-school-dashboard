@@ -1,0 +1,21 @@
+.widget-weather {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    flex: 1;
+}
+
+.widget-weather__content {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+
+    .widget-weather__content__values, .widget-weather__content__icons {
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: .75rem;
+
+    }
+}

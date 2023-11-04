@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #19D3C5;
+    --secondary-color: #F8C65F;
+    --accent-color: #916CDA;
+    --secondary-accent-color: #E45948;
+    --dark-color: #50505E;
+    --light-color: #F1F1F3;
+}
+
+html, body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+
+    .sidebar {
+        flex: 20%;
+    }
+
+    .main__wrapper {
+        flex: 80%;
+    }
+}
+
+main {
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.header {
+    padding: 1rem;
+}
+
+.sidebar {
+    padding: 3rem 1rem 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+
+    & img {
+        width: 50%;
+    }
+}
+
+.widgets {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+
+    .widget {
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1 1 calc(33% - 1rem);
+        min-width: 10rem;
+        max-width: calc(66%);
+        aspect-ratio: 1/1;
+        border-radius: 3rem;
+
+        > * {
+            padding: 2rem;
+
+            & h2 {
+                margin: 0;
+            }
+        }
+
+        &:nth-child(1n) {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        &:nth-child(2n) {
+            background-color: var(--accent-color);
+            color: var(--light-color);
+        }
+
+        &:nth-child(4n) {
+            background-color: var(--secondary-accent-color);
+            color: var(--light-color);
+        }
+    }
+}
