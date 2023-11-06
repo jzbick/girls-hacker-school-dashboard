@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jonathans Dashboard</title>
+
+        <!--CSS-->
+        <link rel="stylesheet"
+              href="index.css">
+        <link rel="stylesheet"
+              href="styles/tagesschau.css">
+        <link rel="stylesheet"
+              href="styles/1live.css">
+        <link rel="stylesheet"
+              href="styles/berufe.css">
+        <link rel="stylesheet"
+              href="styles/clock.css">
+        <link rel="stylesheet"
+                href="styles/weather.css">
+        <link rel="stylesheet"
+                href="styles/holidays.css">
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
+
+        <!--JS-->
+        <script src="scripts/1live.js"></script>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <img src="assets/logo.svg"
+                 alt="">
+            <div>Jonathan</div>
+        </aside>
+        <div class="main__wrapper">
+            <header class="header">
+                <div>
+                    <h1>Dashboard</h1>
+                </div>
+            </header>
+            <main>
+                <section id="widgets"
+                         class="widgets">
+                    <div id="widget-1live"
+                         class="widget">
+                        <div class="widget__1live">
+                            <h2>1Live - Radio</h2>
+                            <div class="widget__1ive__buttons">
+                                <i id="widget-1live__play"
+                                   class="fa-solid fa-play"
+                                   onclick="toggle1LivePlay()"></i>
+                                <i id="widget-1live__volume"
+                                   class="fa-solid fa-volume-high"
+                                   onclick="toggle1LiveVolume()"></i>
+                            </div>
+                            <audio id="widget-1live__player">
+                                <source src="https://wdr-1live-live.icecastssl.wdr.de/wdr/1live/live/mp3/128/stream.mp3"
+                                        type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                    <div id="widget-berufe"
+                         class="widget">
+                        <div class="widget__berufe">
+                            <h2>Berufe</h2>
+                            <label>
+                                <input id="widget-berufe__suche"
+                                       class="widget-berufe__suche"
+                                       placeholder="Suche" />
+                            </label>
+                            <div id="widget-berufe__berufliste"></div>
+                            <dialog id="widget-berufe__dialog">
+                                <div class="widget-berufe__dialog__buttons">
+                                    <i id="widget-berufe__dialog__close"
+                                       class="fa-solid fa-x"></i>
+                                </div>
+                                <div id="widget-berufe__dialog__content"></div>
+                            </dialog>
+                        </div>
+                    </div>
+                    <div id="widget-clock"
+                         class="widget">
+                        <div class="widget__clock">
+                            <div id="widget-clock__time"></div>
+                            <div id="widget-clock__date"></div>
+                        </div>
+                    </div>
+                    <div id="widget-weather"
+                         class="widget">
+                        <div id="widget-weather__container" class="widget-weather">
+                            <h2>Wetter</h2>
+                            <div id="widget-weather__content" class="widget-weather__content">
+                                <div class="widget-weather__content__icons">
+                                    <i class="fa-solid fa-temperature-0"></i>
+                                    <i class="fa-solid fa-wind"></i>
+                                    <i class="fa-solid fa-droplet"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget" id="widget-holidays">
+                        <div class="widget__holidays">
+                            <div id="widget-holidays__content"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+
+    <script type="module"
+            src="index.js"></script>
+</html>
