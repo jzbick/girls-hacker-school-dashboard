@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div>
+            <input type="text"
+                   id="todo-input"
+                   placeholder="Neues Todo">
+            <button onclick="addTodo()">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div>
+            <ul id="todo-liste">
+
+            </ul>
+        </div>
+    </body>
+
+    <script>
+        const todoList = document.getElementById('todo-liste');
+        const todos = JSON.parse(localStorage.getItem('todos')) ?? [];
+
+        // Todo Liste befüllen
+        function refreshTodos() {
+            todoList.innerHTML = '';
+            todos.forEach((todo, index) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `${ todo } <button onclick="removeTodo(${ index })"><i class="fa-solid fa-trash"></i></button>`;
+                todoList.appendChild(listItem);
+            });
+        }
+
+        refreshTodos();
+
+        // neues Todo hinzufügen
+        function addTodo() {
+            const todoInput = document.getElementById('todo-input');
+            const newTodo = todoInput.value;
+            if (newTodo) {
+                todos.push(newTodo);
+                localStorage.setItem('todos', JSON.stringify(todos));
+                refreshTodos();
+                todoInput.value = '';
+            }
+        }
+
+        // Todo löschen
+        function removeTodo(index) {
+            todos.splice(index, 1);
+            localStorage.setItem('todos', JSON.stringify(todos));
+            refreshTodos();
+        }
+    </script>
+</html>

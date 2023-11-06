@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="box">
+            <span id="counter">0</span>
+            <div class="buttons">
+                <button onclick="minus()"><i class="fa-solid fa-minus"></i></button>
+                <button onclick="plus()"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const counter = document.getElementById('counter');
+        let count = 0;
+
+        function plus() {
+            count++;
+            counter.innerHTML = count;
+        }
+
+        function minus() {
+            if (count > 0) {
+                count--;
+                counter.innerHTML = count;
+            }
+        }
+    </script>
+
+    <style>
+        #counter {
+            font-family: Roboto, sans-serif;
+            font-size: 4rem;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 80%;
+            aspect-ratio: 1/1;
+            background-color: #F8C65F;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        button {
+            width: 2rem;
+            aspect-ratio: 1/1;
+        }
+    </style>
+</html>
