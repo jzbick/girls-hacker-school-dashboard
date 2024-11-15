@@ -1,0 +1,116 @@
+/* Standard-Variablen */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --cell-bg: #fff;
+    --cell-hover-bg: #e0e0e0;
+    --player-x-color: red;
+    --player-o-color: blue;
+    --border-color: #333;
+}
+
+/* Dunkles Theme */
+[data-theme="dark"] {
+    --bg-color: #333;
+    --text-color: #f0f0f0;
+    --cell-bg: #444;
+    --cell-hover-bg: #555;
+    --player-x-color: #ff6666;
+    --player-o-color: #66b3ff;
+    --border-color: #777;
+}
+
+/* Pastell-Rosa Theme */
+[data-theme="pastel-pink"] {
+    --bg-color: #ffe4e6;
+    --text-color: #4b2e2e;
+    --cell-bg: #ffcad4;
+    --cell-hover-bg: #ffb3ba;
+    --player-x-color: #ff5c8d;
+    --player-o-color: #ff9a9e;
+    --border-color: #ff7f7f;
+}
+
+/* Pastell-Grün Theme */
+[data-theme="pastel-green"] {
+    --bg-color: #e6ffe6;
+    --text-color: #2e4b2e;
+    --cell-bg: #ccffcc;
+    --cell-hover-bg: #b3ffb3;
+    --player-x-color: #66cc66;
+    --player-o-color: #99e699;
+    --border-color: #4caf50;
+}
+
+/* Pastell-Gelb Theme */
+[data-theme="pastel-yellow"] {
+    --bg-color: #fff9e6;
+    --text-color: #4b4b2e;
+    --cell-bg: #fff3b3;
+    --cell-hover-bg: #ffe680;
+    --player-x-color: #ffcc00;
+    --player-o-color: #ffdb58;
+    --border-color: #ffb84d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#theme-switch {
+    margin-bottom: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: var(--cell-bg);
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: var(--cell-hover-bg);
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+#reset {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
