@@ -52,7 +52,7 @@ function checkResult() {
   }
 
   if (roundWon) {
-    statusText.textContent = `Spieler ${currentPlayer} gewinnt! 🎉`;
+    statusText.textContent = 'Spieler ' + currentPlayer + ' gewinnt! ';
     gameActive = false;
     return;
   }
@@ -64,14 +64,14 @@ function checkResult() {
   }
 
   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-  statusText.textContent = `Spieler ${currentPlayer} ist am Zug`;
+  statusText.textContent = 'Spieler ' + currentPlayer + ' ist am Zug';
 }
 
 function handleResetGame() {
   gameActive = true;
   currentPlayer = 'X';
   gameState = ['', '', '', '', '', '', '', '', ''];
-  statusText.textContent = `Spieler ${currentPlayer} beginnt`;
+  statusText.textContent = 'Spieler ' + currentPlayer + ' beginnt';
   cells.forEach(cell => {
     cell.textContent = '';
     cell.style.color = 'var(--text-color)';
